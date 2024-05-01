@@ -5,6 +5,9 @@ public class contact {
     private String uNumber;
     private String uEmail;
 
+    public contact() {
+    }
+
     public contact(String uName, String uNumber, String uEmail) {
         this.uName = uName;
         this.uNumber = uNumber;

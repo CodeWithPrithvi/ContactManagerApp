@@ -46,13 +46,12 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivity(myIntent);
             }
         });
+         MyDBHelper myDBHelper=new MyDBHelper(this);
 
-        contacts.add(new contact("Prithviraj Singh","8910619266","prithvirajsingh@gmail.com"));
-        contacts.add(new contact("Prithviraj Singh","8910619266","prithvirajsingh@gmail.com"));
-        contacts.add(new contact("Prithviraj Singh","8910619266","prithvirajsingh@gmail.com"));
-        contacts.add(new contact("Prithviraj Singh","8910619266","prithvirajsingh@gmail.com"));
+
+
         recyclerView=findViewById(R.id.contactlist);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new MyAdapter(getApplicationContext(),contacts));
+        recyclerView.setAdapter(new MyAdapter(getApplicationContext(),myDBHelper.fetchContact()));
     }
 }
