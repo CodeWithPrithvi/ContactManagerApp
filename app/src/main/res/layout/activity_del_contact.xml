@@ -24,18 +24,18 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter Contact To be Deleted"
+                android:text="Enter Phone Number To be Deleted"
                 android:textSize="20sp"
                 android:textColor="@color/black"
                 android:layout_margin="10dp"/>
 
             <EditText
-                android:id="@+id/DelName"
+                android:id="@+id/DelPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:layout_margin="10dp"
-                android:hint="Name" />
+                android:hint="Phone Number" />
 
 
 

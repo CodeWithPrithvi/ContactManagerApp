@@ -68,4 +68,9 @@ public class MyDBHelper extends SQLiteOpenHelper {
         }
         return contactArrayList;
     }
+    public void delContact(String phone)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(tableName,phoneNO+ " = ? ", new String[]{phone});
+    }
 }

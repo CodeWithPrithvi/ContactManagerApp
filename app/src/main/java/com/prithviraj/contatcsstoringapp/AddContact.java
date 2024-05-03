@@ -37,11 +37,22 @@ public class AddContact extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myDBHelper.addContact(name.getText().toString(),phone.getText().toString(),email.getText().toString());
+                if (name.getText().toString().isEmpty())
+                {
+                    Toast.makeText(AddContact.this, "Please enter Name", Toast.LENGTH_SHORT).show();
+                } else if (phone.getText().toString().isEmpty()) {
+                    Toast.makeText(AddContact.this, "Please enter Phone Number", Toast.LENGTH_SHORT).show();
+                } else if (email.getText().toString().isEmpty()) {
+                    Toast.makeText(AddContact.this, "Please enter Email ID", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    myDBHelper.addContact(name.getText().toString(),phone.getText().toString(),email.getText().toString());
+                    Intent myIntent = new Intent(AddContact.this,MainActivity.class);
+                    AddContact.this.startActivity(myIntent);
+                    Toast.makeText(AddContact.this, "Contact has been Added Successfully", Toast.LENGTH_LONG).show();
 
-                Intent myIntent = new Intent(AddContact.this,MainActivity.class);
-                AddContact.this.startActivity(myIntent);
-                Toast.makeText(AddContact.this, "Contact has been Added Successfully", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
