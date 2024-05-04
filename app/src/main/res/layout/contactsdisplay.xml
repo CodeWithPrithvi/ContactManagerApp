@@ -16,6 +16,7 @@
         tools:layout_editor_absoluteY="101dp">
 
     <LinearLayout
+        android:id="@+id/llrow"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

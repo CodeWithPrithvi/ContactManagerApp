@@ -52,6 +52,6 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView=findViewById(R.id.contactlist);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new MyAdapter(getApplicationContext(),myDBHelper.fetchContact()));
+        recyclerView.setAdapter(new MyAdapter(this,myDBHelper.fetchContact()));
     }
 }

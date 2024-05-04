@@ -47,6 +47,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
         values.put(userName,name);
         values.put(phoneNO,phone);
         values.put(emailID,email);
+
         db.insert(tableName,null,values);
     }
 
@@ -72,5 +73,17 @@ public class MyDBHelper extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(tableName,phoneNO+ " = ? ", new String[]{phone});
+    }
+    public void updateContact(String name,String phone,String email)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values= new ContentValues();
+        values.put(userName,name);
+        values.put(phoneNO,phone);
+        values.put(emailID,email);
+
+        db.update(tableName, values, phoneNO + " = ?",
+                new String[]{phone});
+
     }
 }
