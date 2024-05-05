@@ -1,6 +1,18 @@
 package com.prithviraj.contatcsstoringapp;
 
 public class contact {
+
+
+    private int uId;
+
+    public int getuId() {
+        return uId;
+    }
+
+    public void setuId(int uId) {
+        this.uId = uId;
+    }
+
     private String uName;
     private String uNumber;
     private String uEmail;
@@ -8,7 +20,8 @@ public class contact {
     public contact() {
     }
 
-    public contact(String uName, String uNumber, String uEmail) {
+    public contact(int uId, String uName, String uNumber, String uEmail) {
+        this.uId = uId;
         this.uName = uName;
         this.uNumber = uNumber;
         this.uEmail = uEmail;

@@ -59,6 +59,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
         while (cursor.moveToNext())
         {
             contact c = new contact();
+            c.setuId(cursor.getInt(0));
             c.setuName(cursor.getString(1));
             c.setuNumber(cursor.getString(2));
             c.setuEmail(cursor.getString(3));
@@ -74,16 +75,16 @@ public class MyDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(tableName,phoneNO+ " = ? ", new String[]{phone});
     }
-    public void updateContact(String name,String phone,String email)
+    public void updateContact(contact model,String p)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values= new ContentValues();
-        values.put(userName,name);
-        values.put(phoneNO,phone);
-        values.put(emailID,email);
 
-        db.update(tableName, values, phoneNO + " = ?",
-                new String[]{phone});
+        values.put(userName,model.getuName());
+        values.put(phoneNO,model.getuNumber());
+        values.put(emailID,model.getuEmail());
+
+        db.update(tableName, values, phoneNO + " = ?",new String[]{String.valueOf(p)});
 
     }
 }

@@ -59,7 +59,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
                         name = editText1.getText().toString();
                         phone=editText2.getText().toString();
                         email=editText3.getText().toString();
-                        myDBHelper.updateContact(name,phone,email);
+                        contact c = new contact();
+                        c.setuNumber(phone);
+                        c.setuName(name);
+                        c.setuEmail(email);
+                        myDBHelper.updateContact(c,contacts.get(position).getuNumber().toString());
                         dialog.dismiss();
                         Intent i = new Intent(context, MainActivity.class);
                         context.startActivity(i);
